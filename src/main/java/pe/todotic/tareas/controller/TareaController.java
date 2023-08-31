@@ -18,18 +18,18 @@ public class TareaController {
     @Autowired
     private TareaRepository tareaRepositary;
 
-    @GetMapping("/leer")
+    @GetMapping("")
     List<Tarea> index() {
         return tareaRepositary.findAll();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/guardar")
+    @PostMapping("")
     Tarea create(@RequestBody Tarea tarea){
         return tareaRepositary.save(tarea);
     }
 
-    @PutMapping("/editar/{id}")
+    @PutMapping("{id}")
     Tarea update (@PathVariable String id, @RequestBody Tarea tarea){
         Tarea tareaFromDB = tareaRepositary
                 .findById(id)
@@ -42,7 +42,7 @@ public class TareaController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping ("/eliminar/{id}")
+    @DeleteMapping ("{id}")
     void delete (@PathVariable  String id) {
             Tarea tarea = tareaRepositary
                     .findById(id)
