@@ -19,6 +19,7 @@ public class TareaController {
     private TareaRepository tareaRepositary;
 
     @GetMapping("")
+
     List<Tarea> index() {
         return tareaRepositary.findAll();
     }
