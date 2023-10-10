@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Tarea {
     @Id
     private String id;
+
     private String nombre;
     private boolean completado;
 }
