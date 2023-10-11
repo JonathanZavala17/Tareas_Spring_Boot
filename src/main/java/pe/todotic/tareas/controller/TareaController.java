@@ -23,6 +23,15 @@ public class TareaController {
         return tareaRepositary.findAll();
     }
 
+    /*/
+    @GetMapping("")
+    List<Tarea> index() {
+        return tareaRepositary.findAll();
+    }
+
+*/
+
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     Tarea create(@RequestBody Tarea tarea){
